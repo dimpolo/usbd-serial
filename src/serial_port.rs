@@ -91,7 +91,7 @@ where
         data_if_name: Option<&'static str>,
     ) -> SerialPort<'a, B, RS, WS> {
         SerialPort {
-            inner: CdcAcmClass::new_with_interface_names(alloc, 64, comm_if_name, data_if_name),
+            inner: CdcAcmClass::new_with_interface_names(alloc, 512, comm_if_name, data_if_name),
             read_buf: Buffer::new(read_store),
             write_buf: Buffer::new(write_store),
             write_state: WriteState::Idle,
